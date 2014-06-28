@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html ng-app="photoApp">
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+	<section class="container">
+		<header>
+			<h1>PhotoViewer - InstagramSearcher</h1>
+		</header>
+		<article>
+			<form ng-controller="formController" name="searchForm" submit="">
+				<input type="text" name="tag" value="" placeholder="">
+				<input type="submit" class="button large" name="submit" value="search">
+			</form>
+		</article>
+		<div class="pic-container" ng-controller="picDisplayController">
+			<div class="pic">
+				<img ng-src="" alt="">
+			</div>
+			
+		</div>
+	</section>
+	<script type="text/javascript" src="libs/angular.js"></script>
+	<script type="text/javascript" src="libs/angular-animate.js"></script>
+	<script type="text/javascript" src="js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,135 @@
+@import "./_normalize.scss";
+@import "./_mixins.scss";
+@import "./_var.scss";
+@import "./_button.scss";
+
+html{
+  background-color: $light_gray;
+}
+h1{
+    width:1000px;
+    margin:0 auto;
+    text-align: center;
+    padding:1em;
+    color:#FFF;
+    font-size:3em;
+    text-shadow: 1px 1px 1px rgba(0,0,0,0.8),-1px -1px 1px #EFEFEF;
+  
+    color:$orange;
+    span:first-child{
+      color:$red;
+    }
+    span:nth-child(2){
+      color:$blue;
+    }
+  }
+.form-container{
+  // width:1000px;
+  margin:0 auto;
+  text-align: center;
+  display: none;
+  &.show{
+    display:block;
+  }
+
+  &.show-add{
+     @include transition(opacity .3s);
+    opacity:0;
+  }
+  &.show-active{
+     @include transition(opacity .3s);
+    opacity:1;
+  }
+  form{
+    // width:300px;
+    // padding:10px 0;
+    // background-color:#FFF; 
+    // box-shadow:2px 2px 3px 3px rgba(0,0,0,.5);
+    //animation
+   
+  }
+  input[type="text"]{
+    width:10em;
+    line-height: 1.8em;
+    margin-right: .5em;
+    @include box-sizing(border-box);
+    vertical-align: middle;
+    padding:0 .2em;
+  }
+  .button.large{
+    vertical-align: middle;
+  }
+  .warning{
+    color:$red;
+    margin-top:10px;
+
+  }
+}
+.pic-container{
+  @include clearfix;
+  background-color:#FFF; 
+  box-shadow:3px 3px 5px 3px rgba(0,0,0,.5);
+  margin:0 auto;
+  padding:10px;
+  width:90%;
+  text-align:center;
+  overflow: hidden;
+  // height:auto;
+  // max-height:0;
+  
+  .message{
+    margin:20px 0 40px;
+    text-align: center;
+    .tag-heighlight{
+      color:$red;
+      display: inline-block;
+      font-size: 1.2em;
+    }
+    a{
+      margin-top:-1em;
+      float:right;
+    }
+  }
+  .pic{
+    width:200px;
+    height:200px;
+    margin:5px;
+    display: inline-block;
+    img{
+      width:200px;
+      height:200px;
+    }
+  }
+//animation
+  &.ng-enter{
+      @include transition(max-height .5s ease-in);
+    }
+  &.ng-leave{
+    @include transition(all .5s ease-out);
+  }
+    &.ng-leave{
+      opacity: 1;
+    }
+    &.ng-leave-active{
+      opacity: 0;
+    }
+    &.ng-enter{
+      opacity:0;
+      max-height:0;
+    }
+    &.ng-enter-active{
+       opacity:1;
+      max-height:1000px;
+    }
+    &.ng-leave{
+      opacity: 1;
+      max-height:1000px;
+    }
+    &.ng-leave-active{
+      opacity: 0;
+      max-height:0;
+    }}
+.failed-msg{
+  margin:0 auto;
+  width:1000px;
+}

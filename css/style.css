@@ -590,3 +590,95 @@ table {
   font-size: 12px;
   padding: .4em .5em .3em;
 }
+
+html {
+  background-color: #e7e7e7;
+}
+
+.form-container {
+  width: 1000px;
+  margin: 0 auto;
+  text-align: center;
+}
+.form-container h1 {
+  margin: 0;
+  padding: 1em;
+  color: #FFF;
+  font-size: 3em;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.8), -1px -1px 1px #efefef;
+  color: #ff5500;
+}
+.form-container h1 span:first-child {
+  color: #be252c;
+}
+.form-container h1 span:nth-child(2) {
+  color: #1180c2;
+}
+.form-container form {
+  padding: 10px 0;
+  background-color: #FFF;
+  box-shadow: 2px 2px 3px 3px rgba(0, 0, 0, 0.5);
+}
+.form-container input[type="text"] {
+  width: 10em;
+  line-height: 1.8em;
+  margin-right: .5em;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  vertical-align: middle;
+  padding: 0 .2em;
+}
+.form-container .button.large {
+  vertical-align: middle;
+}
+.form-container .warning {
+  color: #be252c;
+  margin-top: 10px;
+}
+
+.pic-container {
+  background-color: #FFF;
+  box-shadow: 3px 3px 5px 3px rgba(0, 0, 0, 0.5);
+  margin: 0 auto;
+  padding: 10px;
+  width: 1000px;
+}
+.pic-container {
+  zoom: 1;
+}
+.pic-container:after {
+  content: ".";
+  display: block;
+  clear: both;
+  height: 0;
+  overflow: hidden;
+  visibility: hidden;
+}
+.pic-container .message {
+  margin: 20px 0 40px;
+  text-align: center;
+}
+.pic-container .message .tag-heighlight {
+  color: #be252c;
+  display: inline-block;
+  font-size: 1.2em;
+}
+.pic-container .message a {
+  margin-top: -1em;
+  float: right;
+}
+.pic-container .pic {
+  width: 200px;
+  height: 200px;
+  float: left;
+}
+.pic-container .pic img {
+  width: 200px;
+  height: 200px;
+}
+
+.failed-msg {
+  margin: 0 auto;
+  width: 1000px;
+}

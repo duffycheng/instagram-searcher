@@ -3,3 +3,82 @@
 @import "./_var.scss";
 @import "./_button.scss";
 
+html{
+  background-color: $light_gray;
+}
+
+.form-container{
+  width:1000px;
+  margin:0 auto;
+  text-align: center;
+  h1{
+    margin:0;
+    padding:1em;
+    color:#FFF;
+    font-size:3em;
+    text-shadow: 1px 1px 1px rgba(0,0,0,0.8),-1px -1px 1px #EFEFEF;
+
+    color:$orange;
+    span:first-child{
+      color:$red;
+    }
+    span:nth-child(2){
+      color:$blue;
+    }
+  }
+  form{
+    padding:10px 0;
+    background-color:#FFF; 
+    box-shadow:2px 2px 3px 3px rgba(0,0,0,.5);
+  }
+  input[type="text"]{
+    width:10em;
+    line-height: 1.8em;
+    margin-right: .5em;
+    @include box-sizing(border-box);
+    vertical-align: middle;
+    padding:0 .2em;
+  }
+  .button.large{
+    vertical-align: middle;
+  }
+  .warning{
+    color:$red;
+    margin-top:10px;
+
+  }
+}
+.pic-container{
+  @include clearfix;
+  background-color:#FFF; 
+  box-shadow:3px 3px 5px 3px rgba(0,0,0,.5);
+  margin:0 auto;
+  padding:10px;
+  width:1000px;
+  .message{
+    margin:20px 0 40px;
+    text-align: center;
+    .tag-heighlight{
+      color:$red;
+      display: inline-block;
+      font-size: 1.2em;
+    }
+    a{
+      margin-top:-1em;
+      float:right;
+    }
+  }
+  .pic{
+    width:200px;
+    height:200px;
+    float:left;
+    img{
+      width:200px;
+      height:200px;
+    }
+  }
+}
+.failed-msg{
+  margin:0 auto;
+  width:1000px;
+}

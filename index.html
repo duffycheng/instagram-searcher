@@ -5,26 +5,37 @@
 	<title></title>
 	<link rel="stylesheet" href="css/style.css">
 </head>
-<body>
-	<section class="container">
+<body  ng-controller="searchController" >
+	<section class="form-container">
 		<header>
-			<h1>PhotoViewer - InstagramSearcher</h1>
+			<h1><span>Instagram</span><span>Searcher</span></h1>
 		</header>
-		<article>
-			<form ng-controller="formController" name="searchForm" submit="">
-				<input type="text" name="tag" value="" placeholder="">
+		<article ng-show="isFormShow">
+			<form name="searchForm" ng-submit="submit()" novalidate>
+				<input type="text" name="tag" ng-model="tag" placeholder="Enter Tag" required>
 				<input type="submit" class="button large" name="submit" value="search">
+				<p class="warning" ng-if="submitted && searchForm.$error.required">Please enter a tag name </p>
+				<p class="warning" ng-if="failed">The search is failed, please try again!</p>
 			</form>
+
 		</article>
-		<div class="pic-container" ng-controller="picDisplayController">
-			<div class="pic">
-				<img ng-src="" alt="">
-			</div>
-			
+		
+	</section>
+	<section class="pic-container" ng-if="isDataReceived">
+		<div class="message">
+			We fount {{data.length}} results for <span class="tag-heighlight">{{searchTag}}</span>
+			<a href="" class="button large blue" ng-click="searchAgain()">Search Again</a>
 		</div>
+		<div class="pic" ng-repeat="obj in data">
+			<a ng-href="{{obj.link}}">
+				<img ng-src="{{obj.images.low_resolution.url}}" alt="">
+			</a>
+		</div>
+		
 	</section>
 	<script type="text/javascript" src="libs/angular.js"></script>
 	<script type="text/javascript" src="libs/angular-animate.js"></script>
 	<script type="text/javascript" src="js/script.js"></script>
+
 </body>
 </html>

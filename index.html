@@ -6,20 +6,15 @@
 	<link rel="stylesheet" href="css/style.css">
 </head>
 <body  ng-controller="searchController" >
-	<section class="form-container">
-		<header>
-			<h1><span>Instagram</span><span>Searcher</span></h1>
-		</header>
-		<article ng-show="isFormShow">
+	<h1><span>Instagram</span><span>Searcher</span></h1>
+	<!-- <section class="form-container" ng-if="isFormShow" style="display:block;"> -->
+	<section class="form-container" ng-class="{show:isFormShow}">
 			<form name="searchForm" ng-submit="submit()" novalidate>
 				<input type="text" name="tag" ng-model="tag" placeholder="Enter Tag" required>
 				<input type="submit" class="button large" name="submit" value="search">
 				<p class="warning" ng-if="submitted && searchForm.$error.required">Please enter a tag name </p>
 				<p class="warning" ng-if="failed">The search is failed, please try again!</p>
 			</form>
-
-		</article>
-		
 	</section>
 	<section class="pic-container" ng-if="isDataReceived">
 		<div class="message">

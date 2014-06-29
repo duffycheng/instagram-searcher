@@ -6,18 +6,15 @@
 html{
   background-color: $light_gray;
 }
-
-.form-container{
-  width:1000px;
-  margin:0 auto;
-  text-align: center;
-  h1{
-    margin:0;
+h1{
+    width:1000px;
+    margin:0 auto;
+    text-align: center;
     padding:1em;
     color:#FFF;
     font-size:3em;
     text-shadow: 1px 1px 1px rgba(0,0,0,0.8),-1px -1px 1px #EFEFEF;
-
+  
     color:$orange;
     span:first-child{
       color:$red;
@@ -26,10 +23,30 @@ html{
       color:$blue;
     }
   }
+.form-container{
+  // width:1000px;
+  margin:0 auto;
+  text-align: center;
+  display: none;
+  &.show{
+    display:block;
+  }
+
+  &.show-add{
+     @include transition(opacity .3s);
+    opacity:0;
+  }
+  &.show-active{
+     @include transition(opacity .3s);
+    opacity:1;
+  }
   form{
-    padding:10px 0;
-    background-color:#FFF; 
-    box-shadow:2px 2px 3px 3px rgba(0,0,0,.5);
+    // width:300px;
+    // padding:10px 0;
+    // background-color:#FFF; 
+    // box-shadow:2px 2px 3px 3px rgba(0,0,0,.5);
+    //animation
+   
   }
   input[type="text"]{
     width:10em;
@@ -54,7 +71,12 @@ html{
   box-shadow:3px 3px 5px 3px rgba(0,0,0,.5);
   margin:0 auto;
   padding:10px;
-  width:1000px;
+  width:90%;
+  text-align:center;
+  overflow: hidden;
+  // height:auto;
+  // max-height:0;
+  
   .message{
     margin:20px 0 40px;
     text-align: center;
@@ -71,13 +93,42 @@ html{
   .pic{
     width:200px;
     height:200px;
-    float:left;
+    margin:5px;
+    display: inline-block;
     img{
       width:200px;
       height:200px;
     }
   }
-}
+//animation
+  &.ng-enter{
+      @include transition(max-height .5s ease-in);
+    }
+  &.ng-leave{
+    @include transition(all .5s ease-out);
+  }
+    &.ng-leave{
+      opacity: 1;
+    }
+    &.ng-leave-active{
+      opacity: 0;
+    }
+    &.ng-enter{
+      opacity:0;
+      max-height:0;
+    }
+    &.ng-enter-active{
+       opacity:1;
+      max-height:1000px;
+    }
+    &.ng-leave{
+      opacity: 1;
+      max-height:1000px;
+    }
+    &.ng-leave-active{
+      opacity: 0;
+      max-height:0;
+    }}
 .failed-msg{
   margin:0 auto;
   width:1000px;

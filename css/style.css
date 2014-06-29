@@ -595,29 +595,44 @@ html {
   background-color: #e7e7e7;
 }
 
-.form-container {
+h1 {
   width: 1000px;
   margin: 0 auto;
   text-align: center;
-}
-.form-container h1 {
-  margin: 0;
   padding: 1em;
   color: #FFF;
   font-size: 3em;
   text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.8), -1px -1px 1px #efefef;
   color: #ff5500;
 }
-.form-container h1 span:first-child {
+h1 span:first-child {
   color: #be252c;
 }
-.form-container h1 span:nth-child(2) {
+h1 span:nth-child(2) {
   color: #1180c2;
 }
-.form-container form {
-  padding: 10px 0;
-  background-color: #FFF;
-  box-shadow: 2px 2px 3px 3px rgba(0, 0, 0, 0.5);
+
+.form-container {
+  margin: 0 auto;
+  text-align: center;
+  display: none;
+}
+.form-container.show {
+  display: block;
+}
+.form-container.show-add {
+  -webkit-transition: opacity 0.3s;
+  -moz-transition: opacity 0.3s;
+  -o-transition: opacity 0.3s;
+  transition: opacity 0.3s;
+  opacity: 0;
+}
+.form-container.show-active {
+  -webkit-transition: opacity 0.3s;
+  -moz-transition: opacity 0.3s;
+  -o-transition: opacity 0.3s;
+  transition: opacity 0.3s;
+  opacity: 1;
 }
 .form-container input[type="text"] {
   width: 10em;
@@ -642,7 +657,9 @@ html {
   box-shadow: 3px 3px 5px 3px rgba(0, 0, 0, 0.5);
   margin: 0 auto;
   padding: 10px;
-  width: 1000px;
+  width: 90%;
+  text-align: center;
+  overflow: hidden;
 }
 .pic-container {
   zoom: 1;
@@ -671,11 +688,46 @@ html {
 .pic-container .pic {
   width: 200px;
   height: 200px;
-  float: left;
+  margin: 5px;
+  display: inline-block;
 }
 .pic-container .pic img {
   width: 200px;
   height: 200px;
+}
+.pic-container.ng-enter {
+  -webkit-transition: max-height 0.5s ease-in;
+  -moz-transition: max-height 0.5s ease-in;
+  -o-transition: max-height 0.5s ease-in;
+  transition: max-height 0.5s ease-in;
+}
+.pic-container.ng-leave {
+  -webkit-transition: all 0.5s ease-out;
+  -moz-transition: all 0.5s ease-out;
+  -o-transition: all 0.5s ease-out;
+  transition: all 0.5s ease-out;
+}
+.pic-container.ng-leave {
+  opacity: 1;
+}
+.pic-container.ng-leave-active {
+  opacity: 0;
+}
+.pic-container.ng-enter {
+  opacity: 0;
+  max-height: 0;
+}
+.pic-container.ng-enter-active {
+  opacity: 1;
+  max-height: 1000px;
+}
+.pic-container.ng-leave {
+  opacity: 1;
+  max-height: 1000px;
+}
+.pic-container.ng-leave-active {
+  opacity: 0;
+  max-height: 0;
 }
 
 .failed-msg {

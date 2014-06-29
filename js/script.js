@@ -10,6 +10,10 @@ photoApp.controller("searchController",function($scope,$rootScope,$http){
         callback: "JSON_CALLBACK"
     };
 
+    // requestPics("cat");
+
+
+
 	$scope.submit=function(){
 		$scope.submitted = true;
 		if ($scope.searchForm.$valid) {
